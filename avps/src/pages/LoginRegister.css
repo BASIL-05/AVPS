@@ -1,9 +1,39 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('C:\Users\aneef\Work\Coding\Web\AVPS\avps\src\imgs\bg.jpeg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+.login{
+    color: rgb(247, 247, 226);
+  }
+
+
 .wrapper{
     position: relative;
     width: 420px;
     height: 420px;
     border: 1px solid white;
+   
     margin: auto;
+    margin-top: 10%;
     box-shadow: 5px 5px 5px  rgb(247, 247, 226);
     backdrop-filter: blur(30px);
     background: transparent;
@@ -64,4 +94,6 @@ form button{
     cursor: pointer;
     font-size: 16px;
     font-weight: 700;
+    color: #000;
+    
 }

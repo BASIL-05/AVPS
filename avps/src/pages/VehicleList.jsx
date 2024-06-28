@@ -1,16 +1,16 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
+import VehicleDetails from '../components/VehicleDetails'
 import Footer from '../components/Footer'
-const Home = () => {
+
+const VehicleList = () => {
   return (
     <div>
         <Navbar/>
-        <Hero />
+        <VehicleDetails/>
         <Footer/>
-        
     </div>
   )
 }
 
-export default Home
+export default VehicleList

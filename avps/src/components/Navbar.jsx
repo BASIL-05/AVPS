@@ -14,10 +14,10 @@ function Navbar() {
                     <span className="text-white font-bold text-lg">Your Logo</span>
                 </div>
                 <div className="hidden md:flex space-x-4 items-center">
-                    <a href="/" className="text-white hover:bg-gray-700 px-3 py-2 rounded">Home</a>
+                    <a href="/Home" className="text-white hover:bg-gray-700 px-3 py-2 rounded">Home</a>
                     <a href="/about" className="text-white hover:bg-gray-700 px-3 py-2 rounded">About</a>
                     <a href="/services" className="text-white hover:bg-gray-700 px-3 py-2 rounded">Services</a>
-                    <a href="/contact" className="text-white hover:bg-gray-700 px-3 py-2 rounded">Contact</a>
+                    <a href="/" className="text-white hover:bg-gray-700 px-3 py-2 rounded">Logout</a>
                 </div>
                 <div className="md:hidden">
                     <button

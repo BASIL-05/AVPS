@@ -1,6 +1,7 @@
 // Hero.jsx
 
 import heroImage  from '../assets/car.jpeg'; // Replace with your hero image path
+import { Link } from 'react-router-dom';
 
 function Hero() {
     return (
@@ -9,18 +10,24 @@ function Hero() {
                 <div className="lg:grid lg:grid-cols-2 lg:gap-8">
                     <div className="lg:col-span-1">
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-                            <div className="bg-blue-200 text-blue-900 p-4 rounded-lg shadow-lg">
-                                <p className="text-sm">Metric 1</p>
-                                <p className="text-4xl font-bold">123</p>
-                            </div>
-                            <div className="bg-green-200 text-green-900 p-4 rounded-lg shadow-lg">
-                                <p className="text-sm">Metric 2</p>
-                                <p className="text-4xl font-bold">456</p>
-                            </div>
-                            <div className="bg-yellow-200 text-yellow-900 p-4 rounded-lg shadow-lg">
-                                <p className="text-sm">Metric 3</p>
-                                <p className="text-4xl font-bold">789</p>
-                            </div>
+                            <Link to='/VehicleList'>
+                                <div className="bg-blue-200 text-blue-900 p-4 rounded-lg shadow-lg">
+                                    <p className="text-sm">Metric 1</p>
+                                    <p className="text-4xl font-bold">123</p>
+                                </div>
+                            </Link>
+                            <Link to='/VehicleList'>
+                                <div className="bg-green-200 text-green-900 p-4 rounded-lg shadow-lg">
+                                    <p className="text-sm">Metric 2</p>
+                                    <p className="text-4xl font-bold">456</p>
+                                </div>
+                            </Link>
+                            <Link to='/VehicleList'>
+                                <div className="bg-yellow-200 text-yellow-900 p-4 rounded-lg shadow-lg">
+                                    <p className="text-sm">Metric 3</p>
+                                    <p className="text-4xl font-bold">789</p>
+                                </div>
+                            </Link>
                         </div>
                         <button className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-500 text-xl font-bold mb-8">
                             Admit Guest

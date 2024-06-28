@@ -2,6 +2,7 @@ import React from 'react';
 import './LoginRegister.css';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const LoginRegister = () => {
     return(
@@ -19,7 +20,9 @@ const LoginRegister = () => {
                         placeholder='password' required / >
                         <FaLock className='icon'/>
                     </div>
-                    <button type="submit">Login</button>
+                    <Link to='/Home'>
+                        <button type="submit">Login</button>
+                    </Link>
                 </form>
             </div>
 
