@@ -1,6 +1,4 @@
-// Hero.jsx
-
-import heroImage  from '../assets/car.jpeg'; // Replace with your hero image path
+import heroImage from '../assets/car.jpeg'; // Replace with your hero image path
 import { Link } from 'react-router-dom';
 
 function Hero() {
@@ -10,21 +8,21 @@ function Hero() {
                 <div className="lg:grid lg:grid-cols-2 lg:gap-8">
                     <div className="lg:col-span-1">
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-                            <Link to='/VehicleList'>
+                            <Link to={{ pathname: '/VehicleList', state: { heading: 'Total Visit' } }}>
                                 <div className="bg-blue-200 text-blue-900 p-4 rounded-lg shadow-lg">
-                                    <p className="text-sm">Metric 1</p>
+                                    <p className="text-sm">Vehicles Inside</p>
                                     <p className="text-4xl font-bold">123</p>
                                 </div>
                             </Link>
-                            <Link to='/VehicleList'>
+                            <Link to={{ pathname: '/VehicleList', state: { heading: 'Total Visit' } }}>
                                 <div className="bg-green-200 text-green-900 p-4 rounded-lg shadow-lg">
-                                    <p className="text-sm">Metric 2</p>
+                                    <p className="text-sm">Total Visit</p>
                                     <p className="text-4xl font-bold">456</p>
                                 </div>
                             </Link>
-                            <Link to='/VehicleList'>
+                            <Link to={{ pathname: '/VehicleList', state: { heading: 'Guests Inside' } }}>
                                 <div className="bg-yellow-200 text-yellow-900 p-4 rounded-lg shadow-lg">
-                                    <p className="text-sm">Metric 3</p>
+                                    <p className="text-sm">Guests Inside</p>
                                     <p className="text-4xl font-bold">789</p>
                                 </div>
                             </Link>

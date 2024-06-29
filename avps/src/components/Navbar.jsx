@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import logo from '../assets/react.svg'; // Replace with your logo path
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -14,10 +15,22 @@ function Navbar() {
                     <span className="text-white font-bold text-lg">Your Logo</span>
                 </div>
                 <div className="hidden md:flex space-x-4 items-center">
-                    <a href="/Home" className="text-white hover:bg-gray-700 px-3 py-2 rounded">Home</a>
-                    <a href="/about" className="text-white hover:bg-gray-700 px-3 py-2 rounded">About</a>
-                    <a href="/services" className="text-white hover:bg-gray-700 px-3 py-2 rounded">Services</a>
-                    <a href="/" className="text-white hover:bg-gray-700 px-3 py-2 rounded">Logout</a>
+
+                    <Link to="/Home">
+                        <div className="text-white hover:bg-gray-700 px-3 py-2 rounded">Home</div>
+                    </Link>
+
+                    <Link to="/Registration">
+                        <div className="text-white hover:bg-gray-700 px-3 py-2 rounded">Register User</div>
+                    </Link>
+
+                    <Link to="#">
+                        <div className="text-white hover:bg-gray-700 px-3 py-2 rounded">Services</div>
+                    </Link>
+
+                    <Link to="/">
+                        <div className="text-white hover:bg-gray-700 px-3 py-2 rounded">Logout</div>
+                    </Link>
                 </div>
                 <div className="md:hidden">
                     <button
