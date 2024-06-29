@@ -2,7 +2,6 @@
   "name": "avps",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Aneef-S.github.com/AVPS",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
