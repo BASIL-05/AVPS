@@ -7,6 +7,7 @@ import MainLayout from './layouts/MainLayout.jsx'
 import LoginRegister from './pages/LoginRegister.jsx'
 import VehicleList from './pages/VehicleList.jsx';
 import RegistrationPage from './pages/RegistrationPage.jsx';
+import WebCam from './components/WebCam.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements( 
@@ -26,8 +27,8 @@ const App = () => {
 
   const names = ['annef','ajx','raku'];
   return (
-    <RouterProvider router = {router} />
-    
+    //<RouterProvider router = {router} />
+    <WebCam/>
   )
 }
 

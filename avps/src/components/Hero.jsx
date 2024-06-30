@@ -28,7 +28,7 @@ function Hero() {
                             </Link>
                         </div>
                         <Link to="/Registration">
-                            <button className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-500 text-xl font-bold mb-8">
+                            <button className="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-gray-800 text-xl font-bold mb-8">
                                 Admit Guest
                             </button>
                         </Link>
