@@ -8,19 +8,19 @@ function Hero() {
                 <div className="lg:grid lg:grid-cols-2 lg:gap-8">
                     <div className="lg:col-span-1">
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-                            <Link to={{ pathname: '/VehicleList', state: { heading: 'Total Visit' } }}>
+                            <Link to={{pathname:'/VehicleList'}} state='Vehicle Inside'>
                                 <div className="bg-blue-200 text-blue-900 p-4 rounded-lg shadow-lg">
                                     <p className="text-sm">Vehicles Inside</p>
                                     <p className="text-4xl font-bold">123</p>
                                 </div>
                             </Link>
-                            <Link to={{ pathname: '/VehicleList', state: { heading: 'Total Visit' } }}>
+                            <Link to={{ pathname: '/VehicleList'}} state='Total Visit'>
                                 <div className="bg-green-200 text-green-900 p-4 rounded-lg shadow-lg">
                                     <p className="text-sm">Total Visit</p>
                                     <p className="text-4xl font-bold">456</p>
                                 </div>
                             </Link>
-                            <Link to={{ pathname: '/VehicleList', state: { heading: 'Guests Inside' } }}>
+                            <Link to={{ pathname: '/VehicleList'}} state='Guests Inside'>
                                 <div className="bg-yellow-200 text-yellow-900 p-4 rounded-lg shadow-lg">
                                     <p className="text-sm">Guests Inside</p>
                                     <p className="text-4xl font-bold">789</p>

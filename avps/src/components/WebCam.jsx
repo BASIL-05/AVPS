@@ -6,7 +6,6 @@ const WebCam = () => {
   return (
     <div>
         <Webcam/>
-
     </div>
   )
 }
