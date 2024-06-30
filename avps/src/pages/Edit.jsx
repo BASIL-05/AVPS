@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 //import './registration.css';
 
-const RegistrationForm = () => {
+const Edit = () => {
     const [vehicleNumber, setVehicleNumber] = useState("");
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
-    const [position, setPosition] = useState("");
     const [email, setEmail] = useState("");
 
     const handleRegister = (event) => {
@@ -13,7 +12,6 @@ const RegistrationForm = () => {
             vehicleNumber,
             name,
             phone,
-            position,
             email,
         };
 
@@ -24,8 +22,7 @@ const RegistrationForm = () => {
         
         setVehicleNumber("");
         setName("");
-        setPhone("");
-        setPosition("");
+        setPhone("");   
         setEmail("");
         window.location.reload();
     };
@@ -33,7 +30,7 @@ const RegistrationForm = () => {
     return (
         <div className="flex justify-center items-center h-screen bg-gray-900">
             <div className="bg-gray-100 w-96 h-auto rounded-lg shadow-lg p-10 relative ">
-                <h1 className="text-center text-xl font-bold mb-4">Registration</h1>
+                <h1 className="text-center text-xl font-bold mb-4">Edit Users</h1>
                 <form onSubmit={e => { e.preventDefault(); handleRegister(e); }}>
                     <hr className="mb-4 opacity-30" />
                     <input
@@ -68,16 +65,6 @@ const RegistrationForm = () => {
                     />
                     <input
                         type="text"
-                        name="position"
-                        id="position"
-                        value={position}
-                        onChange={(e) => setPosition(e.target.value)}
-                        placeholder="Position"
-                        required
-                        className="w-full h-10 mb-4 rounded-lg pl-3 border-none shadow-md focus:outline-none"
-                    />
-                    <input
-                        type="text"
                         name="email"
                         id="email"
                         value={email}
@@ -90,7 +77,7 @@ const RegistrationForm = () => {
                         type="submit"
                         className="bg-green-600 text-white w-full h-10 rounded-lg mt-4 shadow-md hover:bg-green-400"
                     >
-                        Register
+                        CHANGE
                     </button>
                 </form>
             </div>
@@ -98,4 +85,4 @@ const RegistrationForm = () => {
     );
 };
 
-export default RegistrationForm;
+export default Edit;
