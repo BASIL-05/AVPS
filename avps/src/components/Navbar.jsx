@@ -12,7 +12,7 @@ function Navbar() {
             <div className="max-w-7xl mx-auto flex justify-between items-center">
                 <div className="flex items-center">
                     <img src={logoImg} alt="Logo" className="h-8 mr-2" />
-                    <span className="text-white font-bold text-lg">Your Logo</span>
+                    <span className="text-white font-bold text-lg">AVPS</span>
                 </div>
                 <div className="hidden md:flex space-x-4 items-center">
 

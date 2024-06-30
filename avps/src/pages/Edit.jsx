@@ -35,21 +35,21 @@ const Edit = () => {
                     <hr className="mb-4 opacity-30" />
                     <input
                         type="text"
-                        name="rcnum"
-                        id="rcnum"
-                        value={vehicleNumber}
-                        onChange={(e) => setVehicleNumber(e.target.value)}
-                        placeholder="Vehicle Registration Number"
-                        required
-                        className="w-full h-10 mb-4 rounded-lg pl-3 border-none shadow-md focus:outline-none"
-                    />
-                    <input
-                        type="text"
                         name="name"
                         id="name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="Name"
+                        required
+                        className="w-full h-10 mb-4 rounded-lg pl-3 border-none shadow-md focus:outline-none"
+                    />
+                    <input
+                        type="text"
+                        name="rcnum"
+                        id="rcnum"
+                        value={vehicleNumber}
+                        onChange={(e) => setVehicleNumber(e.target.value)}
+                        placeholder="Vehicle Registration Number"
                         required
                         className="w-full h-10 mb-4 rounded-lg pl-3 border-none shadow-md focus:outline-none"
                     />
