@@ -22,4 +22,6 @@ const WebCam = () => {
   );
 };
 
+
 export default WebCam;
+

@@ -1,96 +1,93 @@
 import cv2
 import easyocr
 import os
-
- 
-#arduino comms setup
 import serial.tools.list_ports
- 
+
+# Arduino comms setup
 ports = serial.tools.list_ports.comports()
 serialInst = serial.Serial()
 portsList = []
- 
-# def match(text,reg):
-#     6
- 
- 
+
 for one in ports:
     portsList.append(str(one))
     print(str(one))
- 
-com = input("Select Com Port for Arduino #: ")
- 
-for i in range(len(portsList)):
-    if portsList[i].startswith("COM" + str(com)):
-        use = "COM" + str(com)
-        print(use)
- 
-serialInst.baudrate = 115200
-serialInst.port = use
-serialInst.open()
-reg_list=["tn09cb5990","br19g8869","mn03t2532","access333","klo1bg2516","kl31m9090"]
- 
- 
- 
-# Instance text detector
-reader = easyocr.Reader(['en'], gpu=False)
- 
-# Create a folder path for saving screenshots
-save_folder = r"C:\Users\Bhavya\Desktop\ACPS\scr"
- 
-# Check if the folder exists, and create it if not
-if not os.path.exists(save_folder):
-    os.makedirs(save_folder)
- 
-# Open a connection to the camera (camera index 0 is usually the default webcam)
-cam = cv2.VideoCapture(0)
- 
-cv2.namedWindow("Text Detection from Camera", cv2.WINDOW_NORMAL)
- 
-img_counter = 0
- 
-while True:
-    # Capture frame-by-frame
-    ret, frame = cam.read()
- 
-    if not ret:
-        print("Failed to grab frame")
-        break
- 
-    # Display the frame
-    cv2.imshow("Text Detection from Camera", frame)
- 
-    # Save the frame and print the result upon pressing the 'Space' key
-    k = cv2.waitKey(1)
-    if k % 256 == 27:  # 'ESC' key
-        print("Escape hit. Closing app")
-        break
-    elif k % 256 == 32:  # 'Space' key
-        img_name = os.path.join(save_folder, f"opencv_frame_{img_counter}.jpg")
-        cv2.imwrite(img_name, frame)
-        print("Screenshot taken and saved in", img_name)
- 
-        # Perform text detection on the captured frame
-        text_results = reader.readtext(frame)
- 
-        # Print recognized text and confidence score
-        for detection in text_results:
-            text = detection[1]  # Extracting the recognized text
-            confidence = detection[2]  # Extracting the confidence score
-            print(f"Text: {text}, Confidence: {confidence:.2f}")
- 
-            text = text.replace(" ","")
-            text2 = text.lower()
-            print(text2)    
-            print((text2 in reg_list))                                             #arduino comms
-            if text2 in reg_list:
-                command="ON"
- 
-            else:
-                command="OFF"
-            serialInst.write(command.encode('utf-8'))
-        img_counter += 1
- 
-# Release the camera and close all OpenCV windows
-cam.release()
-cv2.destroyAllWindows() 
+
+if not portsList:
+    print("No available COM ports found.")
+else:
+    com = input("Select COM Port for Arduino #: ")
+    use = None
+
+    for i in range(len(portsList)):
+        if portsList[i].startswith("COM" + str(com)):
+            use = "COM" + str(com)
+            print(f"Using port: {use}")
+            break
+
+    if use is None:
+        print(f"COM{com} not found in available ports.")
+    else:
+        serialInst.baudrate = 115200
+        serialInst.port = use
+        serialInst.open()
+        reg_list = ["tn09cb5990", "br19g8869", "mn03t2532", "access333", "klo1bg2516", "kl31m9090"]
+
+        # Instance text detector
+        reader = easyocr.Reader(['en'], gpu=False)
+
+        # Create a folder path for saving screenshots
+        save_folder = r"C:\Users\aneef\Work\Coding\Web\AVPS\avps\src\Python Code\ACPS\scr"
+
+        # Check if the folder exists, and create it if not
+        if not os.path.exists(save_folder):
+            os.makedirs(save_folder)
+
+        # Open a connection to the camera (camera index 0 is usually the default webcam)
+        cam = cv2.VideoCapture(0)
+        cv2.namedWindow("Text Detection from Camera", cv2.WINDOW_NORMAL)
+        img_counter = 0
+
+        while True:
+            # Capture frame-by-frame
+            ret, frame = cam.read()
+
+            if not ret:
+                print("Failed to grab frame")
+                break
+
+            # Display the frame
+            cv2.imshow("Text Detection from Camera", frame)
+
+            # Save the frame and print the result upon pressing the 'Space' key
+            k = cv2.waitKey(1)
+            if k % 256 == 27:  # 'ESC' key
+                print("Escape hit. Closing app")
+                break
+            elif k % 256 == 32:  # 'Space' key
+                img_name = os.path.join(save_folder, f"opencv_frame_{img_counter}.jpg")
+                cv2.imwrite(img_name, frame)
+                print("Screenshot taken and saved in", img_name)
+
+                # Perform text detection on the captured frame
+                text_results = reader.readtext(frame)
+
+                # Print recognized text and confidence score
+                for detection in text_results:
+                    text = detection[1]  # Extracting the recognized text
+                    confidence = detection[2]  # Extracting the confidence score
+                    print(f"Text: {text}, Confidence: {confidence:.2f}")
+
+                    text = text.replace(" ", "")
+                    text2 = text.lower()
+                    print(text2)
+                    print((text2 in reg_list))  # Arduino comms
+                    if text2 in reg_list:
+                        command = "ON"
+                    else:
+                        command = "OFF"
+                    serialInst.write(command.encode('utf-8'))
+                img_counter += 1
+
+        # Release the camera and close all OpenCV windows
+        cam.release()
+        cv2.destroyAllWindows()
