@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 const LoginRegister = () => {
     return (
-        <div className="flex justify-center items-center h-screen bg-gray-800">
+        <div className="flex flex-col justify-center items-center h-screen bg-gray-800">
+            <h1 className="text-5xl font-bold font-mono text-white ">Welcome to Our Platform!</h1>
             <div className="relative w-96 h-96 border border-white backdrop-blur-lg bg-transparent rounded-lg flex items-center shadow-md mt-20">
                 <div className="w-full p-10">
                     <form action="">

@@ -7,7 +7,7 @@ import MainLayout from './layouts/MainLayout.jsx'
 import LoginRegister from './pages/LoginRegister.jsx'
 import VehicleList from './pages/VehicleList.jsx';
 import RegistrationPage from './pages/RegistrationPage.jsx';
-import WebCam from './components/WebCam.jsx';
+
 import Edit from './pages/Edit.jsx';
 
 const router = createBrowserRouter(

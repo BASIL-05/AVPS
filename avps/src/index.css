@@ -2,8 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background: url('C:\Users\aneef\Work\Coding\Web\AVPS\avps\src\imgs\bg.jpeg') no-repeat;
-    background-size: cover;
-    background-position: center;
-}
+
