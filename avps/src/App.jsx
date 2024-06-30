@@ -8,6 +8,7 @@ import LoginRegister from './pages/LoginRegister.jsx'
 import VehicleList from './pages/VehicleList.jsx';
 import RegistrationPage from './pages/RegistrationPage.jsx';
 import WebCam from './components/WebCam.jsx';
+import Edit from './pages/Edit.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements( 
@@ -17,7 +18,7 @@ const router = createBrowserRouter(
     <Route path="/Home" element= {<Home/>}/>
     <Route path="/VehicleList" element= {<VehicleList/>}/>
     <Route path="/Registration" element= {<RegistrationPage/>}/>
-    
+    <Route path='/Edit' element= {<Edit/>}/>
     
   </>
   
