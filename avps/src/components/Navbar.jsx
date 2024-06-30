@@ -1,9 +1,9 @@
 // Navbar.jsx
 
 import { useState } from 'react';
-import logo from '../assets/react.svg'; // Replace with your logo path
+//import logo from '../assets/react.svg'; // Replace with your logo path
 import { Link } from 'react-router-dom';
-
+import logoImg from '../imgs/av.png'
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -11,7 +11,7 @@ function Navbar() {
         <nav className="bg-gray-800 p-4">
             <div className="max-w-7xl mx-auto flex justify-between items-center">
                 <div className="flex items-center">
-                    <img src={logo} alt="Logo" className="h-8 mr-2" />
+                    <img src={logoImg} alt="Logo" className="h-8 mr-2" />
                     <span className="text-white font-bold text-lg">Your Logo</span>
                 </div>
                 <div className="hidden md:flex space-x-4 items-center">
