@@ -27,8 +27,8 @@ const App = () => {
 
   const names = ['annef','ajx','raku'];
   return (
-    //<RouterProvider router = {router} />
-    <WebCam/>
+    <RouterProvider router = {router} />
+    // <WebCam/>
   )
 }
 
