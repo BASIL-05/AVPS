@@ -1,10 +1,10 @@
 import heroImage from '../assets/car.jpeg'; // Replace with your hero image path
 import { Link } from 'react-router-dom';
-
+import WebCam from './WebCam';
 function Hero() {
     return (
         
-        <div className="bg-gray-900 text-white">
+        <div className="bg-gray-900 text-white"> 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="lg:grid lg:grid-cols-2 lg:gap-8">
                     <div className="lg:col-span-1">
@@ -45,10 +45,11 @@ function Hero() {
                             </button>
                         </Link>
                         </div>
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
                     </div>
-                    <div className="lg:col-span-1 mt-8 lg:mt-0">
-                        <img src={heroImage} alt="Hero" className="w-full h-auto rounded-lg shadow-lg" />
-                    </div>
+                     <div className="lg:col-span-1 mt-8 lg:mt-0">
+                    <WebCam height={340} width={640} audio={false} />
+                    </div> 
                 </div>
             </div>
         </div>
